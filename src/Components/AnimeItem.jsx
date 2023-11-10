@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function AnimeItem() {
   const { id } = useParams();
-  console.log(id)
+  
 
   // state
   const [anime, setAnime] = useState({});
@@ -158,7 +158,7 @@ function AnimeItem() {
 
 // Styles
 const AnimeItemStyled = styled.div`
-  padding: 3rem 18rem;
+  padding: 3rem 10rem;
   background-color: #EDEDED;
   .back {
     position: absolute;
@@ -174,6 +174,7 @@ const AnimeItemStyled = styled.div`
     }
   }
   h1 {
+    margin-top: 2rem;
     display: inline-block;
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -227,6 +228,7 @@ const AnimeItemStyled = styled.div`
   }
 
   .details {
+    width: fit-content;
     margin-bottom: 40px;
     background-color: #fff;
     border-radius: 20px;

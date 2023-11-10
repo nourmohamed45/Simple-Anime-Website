@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../contexts/global";
 import { useEffect, useState } from "react";
 
@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 function Gallery() {
   const {id} = useParams();
   const {getAnimePictures, pictures} = useGlobalContext();
-
+  const history = useNavigate();
   // state
   const [index, setIndex] = useState(0);
 
@@ -22,8 +22,8 @@ function Gallery() {
 
   return (
     <GalleryStyled>
-      <div className="back">
-        <Link to={"/"}>
+      <div className="back" onClick={() => history(-1)}>
+        <Link to={""}>
           <i className="fas fa-arrow-left"></i>
           Back to Home
         </Link>
